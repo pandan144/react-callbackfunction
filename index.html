@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <script>
+        //callbackfunction
+        function sum(a, b) {
+        console.log(a + b)
+        }
+        function operation(val1, val2, callback) {
+        callback(val1, val2)
+        }
+        operation(6, 5, sum)
+
+
+        var promise = new Promise(function(resolve, reject) {
+		reject('Promise successfuly')
+	})
+	   
+	promise
+		.then(function(successMessage) {
+			console.log(successMessage);
+		})
+		.catch(function(errorMessage) {
+			console.log(errorMessage);
+		});
+
+    </script>
+    
+</body>
+</html>
