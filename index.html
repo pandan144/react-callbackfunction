@@ -20,15 +20,15 @@
 
 
         var promise = new Promise(function(resolve, reject) {
-		reject('Promise successfuly')
+		reject('errorMessage')
 	})
 	   
 	promise
 		.then(function(successMessage) {
-			console.log(successMessage);
+			console.log('success');
 		})
 		.catch(function(errorMessage) {
-			console.log(errorMessage);
+			console.log('error');
 		});
 
     </script>
