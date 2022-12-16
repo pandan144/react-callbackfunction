@@ -1,0 +1,65 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise.all,await</title>
+</head>
+	<body>
+
+
+		<script>
+		
+		//promise.all
+		
+		const x = () =>{
+			return new Promise((resolve,reject)=>{
+				setTimeout (()=>resolve ("x value is resolved"),1000)
+			})
+		}
+		const y = () => {
+			return new Promise((resolve,reject)=>{
+				setTimeout (()=> resolve ("y value is resolved"),500)
+			})
+		}
+		const z = () => {
+			return new Promise((resolve,reject)=>{
+				setTimeout (()=> resolve ("z value is resolved"),5000)
+			})
+		}
+		Promise.all([x(),y(),z()])
+		.then(result => console.log("success -",result))
+		.catch(error => console.log("error -",error))
+		
+		
+		let pro = new Promise((resolve, reject) => {
+			resolve("I hav completed completed BCA"); 
+		});
+		pro.then(
+			new Promise((resolve, reject) => {
+			resolve("Im pandian");
+			}).then((result1) => {
+			console.log(result1);
+			})
+		)
+		.then((result2) => {
+			console.log(result2);
+		});
+
+
+		//async and await
+		let promise = new Promise (function (resolve,reject){
+			resolve ("Process is successfull");
+		});
+		const getData = async() => {
+			try {
+				const data = await promise;
+				console.log(data);
+			} catch (error) {
+				console.log(err);
+			}
+		}
+
+		</script>
+
+	</body>
+</html>
